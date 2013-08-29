@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D687B378-C899-4219-9CD1-FF4682C93CE7}</ProjectGuid>
+    <ProjectGuid>{42CDA374-1582-4C70-B7DA-F8B519BFA220}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HanyangVoting.Booth</RootNamespace>
-    <AssemblyName>HanyangVoting.Booth</AssemblyName>
+    <RootNamespace>HanyangVoting.Clients.Booth</RootNamespace>
+    <AssemblyName>HanyangVoting.Clients.Booth</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

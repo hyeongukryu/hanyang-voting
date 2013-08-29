@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HanyangVoting.Booth.Properties
+namespace HanyangVoting.Clients.Booth.Properties
 {
 
 
@@ -44,7 +44,7 @@ namespace HanyangVoting.Booth.Properties
             {
                 if ((resourceMan == null))
                 {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("HanyangVoting.Booth.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("HanyangVoting.Clients.Booth.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

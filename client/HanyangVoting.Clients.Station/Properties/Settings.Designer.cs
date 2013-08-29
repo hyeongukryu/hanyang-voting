@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HanyangVoting.Station.Properties
+namespace HanyangVoting.Clients.Station.Properties
 {
 
 

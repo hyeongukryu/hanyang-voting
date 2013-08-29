@@ -7,11 +7,11 @@ using System.Windows;
 // 어셈블리의 일반 정보는 다음 특성 집합을 통해 제어됩니다.
 // 어셈블리와 관련된 정보를 수정하려면
 // 이 특성 값을 변경하십시오.
-[assembly: AssemblyTitle("HanyangVoting.Booth")]
+[assembly: AssemblyTitle("HanyangVoting.Clients.Station")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("HanyangVoting.Booth")]
+[assembly: AssemblyProduct("HanyangVoting.Clients.Station")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
