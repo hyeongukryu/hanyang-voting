@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HanyangVoting.Clients.Stati
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HanyangVoting.Clients", "HanyangVoting.Clients\HanyangVoting.Clients.csproj", "{6C92D5CD-558D-48D2-9991-948012A5928F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HanyangVoting.Tools.Shell", "HanyangVoting.Tools.Shell\HanyangVoting.Tools.Shell.csproj", "{AA2C884E-AD64-48CE-B8C2-A7A1C0D18BE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HanyangVoting.Tools.Module", "HanyangVoting.Tools.Module\HanyangVoting.Tools.Module.csproj", "{D65D2F98-FCBD-45A7-B7AC-1D70D4986430}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,14 @@ Global
 		{6C92D5CD-558D-48D2-9991-948012A5928F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C92D5CD-558D-48D2-9991-948012A5928F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C92D5CD-558D-48D2-9991-948012A5928F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA2C884E-AD64-48CE-B8C2-A7A1C0D18BE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA2C884E-AD64-48CE-B8C2-A7A1C0D18BE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA2C884E-AD64-48CE-B8C2-A7A1C0D18BE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA2C884E-AD64-48CE-B8C2-A7A1C0D18BE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D65D2F98-FCBD-45A7-B7AC-1D70D4986430}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D65D2F98-FCBD-45A7-B7AC-1D70D4986430}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D65D2F98-FCBD-45A7-B7AC-1D70D4986430}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D65D2F98-FCBD-45A7-B7AC-1D70D4986430}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
