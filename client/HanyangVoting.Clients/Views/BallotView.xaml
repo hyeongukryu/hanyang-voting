@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="HanyangVoting.Clients.Views.BallotView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" FontFamily="바탕" FontWeight="Normal"
+             d:DesignHeight="600" d:DesignWidth="1024">
+    <DockPanel>
+        <Grid DockPanel.Dock="Top" HorizontalAlignment="Stretch" Background="#7FFFFFFF">
+            <StackPanel Margin="13">
+                <TextBlock HorizontalAlignment="Center" FontSize="55" FontFamily="서울남산체 EB" FontWeight="Normal">기표</TextBlock>
+            </StackPanel>
+        </Grid>
+        <Grid DockPanel.Dock="Bottom">
+            <Button Margin="13" FontSize="20" HorizontalAlignment="Left" Padding="13" FontFamily="서울남산체 EB">무효표 선택</Button>
+        </Grid>
+        <StackPanel Background="White" Margin="290,20,290,0">
+            <TextBlock HorizontalAlignment="Center" FontSize="28" Margin="0,30,0,20">총학생회 선거 투표</TextBlock>
+            <DockPanel>
+                <Button DockPanel.Dock="Right" Margin="20" Padding="10" FontSize="14" FontFamily="서울남산체 EB">유효표 선택</Button>
+                <TextBlock TextAlignment="Center" VerticalAlignment="Center" FontSize="27">첫 번째 선택지</TextBlock>
+            </DockPanel>
+            <DockPanel>
+                <Button DockPanel.Dock="Right" Margin="20" Padding="10" FontSize="14" FontFamily="서울남산체 EB">유효표 선택</Button>
+                <TextBlock TextAlignment="Center" VerticalAlignment="Center" FontSize="27">두 번째 선택지</TextBlock>
+            </DockPanel>
+            <DockPanel>
+                <Button DockPanel.Dock="Right" Margin="20" Padding="10" FontSize="14" FontFamily="서울남산체 EB">유효표 선택</Button>
+                <TextBlock TextAlignment="Center" VerticalAlignment="Center" FontSize="27">세 번째 선택지</TextBlock>
+            </DockPanel>
+            <TextBlock Margin="0,10,0,0" TextAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="서울남산체 EB">투표용지의 끝</TextBlock>
+        </StackPanel>
+    </DockPanel>
+</UserControl>

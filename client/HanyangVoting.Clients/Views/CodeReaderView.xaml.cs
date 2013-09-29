@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HanyangVoting.Clients.ViewModels;
+using Microsoft.Practices.ServiceLocation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,16 +15,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace HanyangVoting.Clients.Station
+namespace HanyangVoting.Clients.Views
 {
     /// <summary>
-    /// MainWindow.xaml에 대한 상호 작용 논리
+    /// CodeReaderView.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CodeReaderView : UserControl
     {
-        public MainWindow()
+        public CodeReaderView()
         {
             InitializeComponent();
+
+            this.DataContext = ServiceLocator.Current.GetInstance<CodeReaderViewModel>();
+            
         }
     }
 }

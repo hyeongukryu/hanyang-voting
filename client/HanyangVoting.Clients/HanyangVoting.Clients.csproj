@@ -11,6 +11,8 @@
     <AssemblyName>HanyangVoting.Clients</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,18 +32,143 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\Microsoft.Practices.Prism\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Interactivity">
+      <HintPath>..\Microsoft.Practices.Prism\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.UnityExtensions">
+      <HintPath>..\Microsoft.Practices.Prism\Microsoft.Practices.Prism.UnityExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Microsoft.Practices.Prism\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\packages\Unity.3.0.1304.1\lib\Net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\packages\Unity.3.0.1304.1\lib\Net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientTypes.cs" />
+    <Compile Include="Controls\BallotControl.cs" />
+    <Compile Include="HanyangVotingClientApplication.cs" />
+    <Compile Include="HanyangVotingClientBootstrapper.cs" />
+    <Compile Include="IContext.cs" />
+    <Compile Include="Models\BoothContext.cs" />
+    <Compile Include="Models\StationContext.cs" />
+    <Compile Include="ServiceImplementations\CameraCodeReader.cs" />
+    <Compile Include="ServiceImplementations\DatabaseBoothService.cs" />
+    <Compile Include="ServiceImplementations\DatabaseStationService.cs" />
+    <Compile Include="ServiceImplementations\PrototypeDatabaseTester.cs" />
+    <Compile Include="ServiceInterfaces\IBoothService.cs" />
+    <Compile Include="ServiceInterfaces\ICodeReader.cs" />
+    <Compile Include="ServiceInterfaces\IDatabaseTester.cs" />
+    <Compile Include="ServiceInterfaces\IStationService.cs" />
+    <Compile Include="Shell.xaml.cs">
+      <DependentUpon>Shell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegionNames.cs" />
+    <Compile Include="ServiceImplementations\DefaultBinaryHashComputer.cs" />
+    <Compile Include="ServiceInterfaces\IBinaryHashComputer.cs" />
+    <Compile Include="ViewModels\BallotViewModel.cs" />
+    <Compile Include="ViewModels\CodeReaderViewModel.cs" />
+    <Compile Include="ViewModels\SplashViewModel.cs" />
+    <Compile Include="Views\BackgroudControl.xaml.cs">
+      <DependentUpon>BackgroudControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BallotView.xaml.cs">
+      <DependentUpon>BallotView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CodeReaderView.xaml.cs">
+      <DependentUpon>CodeReaderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConfirmationDialogView.xaml.cs">
+      <DependentUpon>ConfirmationDialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SplashView.xaml.cs">
+      <DependentUpon>SplashView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VoterSearch.xaml.cs">
+      <DependentUpon>VoterSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WpfContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HanyangVoting.CodeReader\HanyangVoting.CodeReader.csproj">
+      <Project>{20180a0e-049a-4a47-8166-c30b0b9285a1}</Project>
+      <Name>HanyangVoting.CodeReader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HanyangVoting\HanyangVoting.csproj">
+      <Project>{99bf65a9-1b3d-4c68-b065-69430baedd3b}</Project>
+      <Name>HanyangVoting</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Shell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BackgroudControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BallotView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CodeReaderView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ConfirmationDialogView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SplashView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\VoterSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\background.png" />
+    <Resource Include="Assets\background_splash.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

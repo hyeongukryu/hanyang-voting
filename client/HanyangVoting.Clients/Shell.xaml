@@ -1,0 +1,13 @@
+﻿<Window x:Class="HanyangVoting.Clients.Shell"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:p="http://www.codeplex.com/prism"
+        Title="한양대학교 전자투표시스템"
+        MinHeight="600" MinWidth="1024" Height="600" Width="1024">
+    <Grid>
+        <ContentControl p:RegionManager.RegionName="BackgroundRegion"
+                            VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+        <ContentControl p:RegionManager.RegionName="MainRegion"
+                            VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+    </Grid>
+</Window>
