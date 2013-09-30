@@ -1,6 +1,4 @@
-﻿using HanyangVoting.Clients.ViewModels;
-using Microsoft.Practices.ServiceLocation;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,18 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace HanyangVoting.Clients.Views
+namespace HanyangVoting.CodeReader
 {
     /// <summary>
-    /// CodeReaderView.xaml에 대한 상호 작용 논리
+    /// Ticket.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class CodeReaderView : UserControl
+    public partial class Ticket : UserControl
     {
-        public CodeReaderView()
+        public Ticket()
         {
             InitializeComponent();
-
-            this.DataContext = ServiceLocator.Current.GetInstance<CodeReaderViewModel>();
         }
     }
 }

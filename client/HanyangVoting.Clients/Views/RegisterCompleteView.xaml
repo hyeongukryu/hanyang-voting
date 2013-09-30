@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="HanyangVoting.Clients.Views.RegisterCompleteView"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:p="http://www.codeplex.com/prism"
+             mc:Ignorable="d" FontFamily="서울남산체 EB" 
+             d:DesignHeight="600" d:DesignWidth="1024">
+    <DockPanel>
+        <Grid DockPanel.Dock="Top" HorizontalAlignment="Stretch" Background="#7FFFFFFF">
+            <StackPanel Margin="13">
+                <TextBlock HorizontalAlignment="Center" FontSize="55" FontFamily="서울남산체 EB" FontWeight="Normal" Text="등록 완료" />
+            </StackPanel>
+        </Grid>
+        <Grid>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock FontSize="30" TextAlignment="Center">시스템의 지시에 따라 기표소에서 투표를 완료하십시오.</TextBlock>
+                <TextBlock FontSize="30" Margin="0,30,0,0" TextAlignment="Center">다른 투표소의 기표소에서는 투표할 수 없습니다.</TextBlock>
+            </StackPanel>
+        </Grid>
+    </DockPanel>
+</UserControl>

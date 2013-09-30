@@ -18,15 +18,15 @@ using System.Windows.Shapes;
 namespace HanyangVoting.Clients.Views
 {
     /// <summary>
-    /// CodeReaderView.xaml에 대한 상호 작용 논리
+    /// SignatureView.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class CodeReaderView : UserControl
+    public partial class SignatureView : UserControl
     {
-        public CodeReaderView()
+        public SignatureView()
         {
             InitializeComponent();
 
-            this.DataContext = ServiceLocator.Current.GetInstance<CodeReaderViewModel>();
+            this.DataContext = ServiceLocator.Current.GetInstance<SignatureViewModel>();
         }
     }
 }

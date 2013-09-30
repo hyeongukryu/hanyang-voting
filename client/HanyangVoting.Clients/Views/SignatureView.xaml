@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="HanyangVoting.Clients.Views.SignatureView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:p="http://www.codeplex.com/prism"
+             mc:Ignorable="d" FontFamily="서울남산체 EB" 
+             d:DesignHeight="600" d:DesignWidth="1024">
+    <DockPanel>
+        <Grid DockPanel.Dock="Top" HorizontalAlignment="Stretch" Background="#7FFFFFFF">
+            <StackPanel Margin="13">
+                <TextBlock HorizontalAlignment="Center" FontSize="55" Text="서명 작성" />
+            </StackPanel>
+        </Grid>
+        <Grid DockPanel.Dock="Bottom">
+            <Button Margin="13" FontSize="40" HorizontalAlignment="Right" Padding="13"
+                    p:Click.Command="{Binding OkCommand}">서명 완료</Button>
+        </Grid>
+        <StackPanel Margin="0,60,0,0" Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+            <StackPanel Width="280" Margin="10">
+                <TextBlock FontSize="22" TextAlignment="Center" Margin="10">총학생회 선거</TextBlock>
+                <InkCanvas />
+            </StackPanel>
+            <StackPanel Width="280" Margin="10">
+                <TextBlock FontSize="22" TextAlignment="Center" Margin="10">제1대학 학생회 선거</TextBlock>
+                <InkCanvas />
+            </StackPanel>
+            <StackPanel Width="280" Margin="10">
+                <TextBlock FontSize="22" TextAlignment="Center" Margin="10">제1대학 제1전공 대표 선거</TextBlock>
+                <InkCanvas />
+            </StackPanel>
+        </StackPanel>
+    </DockPanel>
+</UserControl>

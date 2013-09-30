@@ -3,16 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:p="http://www.codeplex.com/prism"
              mc:Ignorable="d" FontFamily="서울남산체 EB" 
              d:DesignHeight="600" d:DesignWidth="1024">
     <DockPanel>
         <Grid DockPanel.Dock="Top" HorizontalAlignment="Stretch" Background="#7FFFFFFF">
             <StackPanel Margin="13">
-                <TextBlock HorizontalAlignment="Center" FontSize="55" FontFamily="서울남산체 EB" FontWeight="Normal">티켓 입력</TextBlock>
+                <TextBlock HorizontalAlignment="Center" FontSize="55" FontFamily="서울남산체 EB" FontWeight="Normal" Text="{Binding Title}" />
             </StackPanel>
         </Grid>
         <Grid>
-            <Image Source="{Binding Image}" Stretch="Uniform" />
+            <Image Source="{Binding Image}" Stretch="Uniform"
+                   RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <ScaleTransform ScaleX="-1" />
+                </Image.RenderTransform>
+            </Image>
             <StackPanel>
                 <Grid Margin="0,20,0,10" HorizontalAlignment="Center">
                     <TextBlock FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Center"  Foreground="White"
@@ -38,7 +44,7 @@
                 </Grid>
             </StackPanel>
             <Grid VerticalAlignment="Bottom">
-                <DockPanel Margin="200,0,300,20" VerticalAlignment="Bottom">
+                <DockPanel Margin="70,0,240,20" VerticalAlignment="Bottom">
                     <Grid DockPanel.Dock="Left" Margin="0,0,20,0">
                         <TextBlock FontSize="40" Text="티켓 키" Foreground="White">
                             <TextBlock.RenderTransform>
@@ -49,7 +55,8 @@
                     </Grid>
                     <TextBox Text="{Binding Code}" TextAlignment="Center" FontSize="40" HorizontalAlignment="Stretch"></TextBox>
                 </DockPanel>
-                <Button Margin="13" FontSize="40" HorizontalAlignment="Right" Padding="30,13,30,13">확인</Button>
+                <Button Margin="13" FontSize="40" HorizontalAlignment="Right" Padding="30,13,30,13"
+                        p:Click.Command="{Binding OkCommand}">확인</Button>
             </Grid>
         </Grid>
     </DockPanel>

@@ -18,15 +18,23 @@ using System.Windows.Shapes;
 namespace HanyangVoting.Clients.Views
 {
     /// <summary>
-    /// CodeReaderView.xaml에 대한 상호 작용 논리
+    /// VoterSearchView.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class CodeReaderView : UserControl
+    public partial class VoterSearchView : UserControl
     {
-        public CodeReaderView()
+        public VoterSearchView()
         {
             InitializeComponent();
 
-            this.DataContext = ServiceLocator.Current.GetInstance<CodeReaderViewModel>();
+            this.DataContext = ServiceLocator.Current.GetInstance<VoterSearchViewModel>();
+
+            textBoxNumberInput.TextChanged += textBoxNumberInput_TextChanged;
+        }
+
+        void textBoxNumberInput_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var viewModel = this.DataContext as VoterSearchViewModel;
+            viewModel.SearchCommand.Execute(textBoxNumberInput.Text);
         }
     }
 }

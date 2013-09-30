@@ -11,6 +11,7 @@ namespace HanyangVoting.Models
         public long Id { get; set; }
 
         public bool Expired { get; set; }
+        public virtual Station Station { get; set; }
         public virtual Ticket Ticket { get; set; }
         public virtual Choice Choice { get; set; }
     }

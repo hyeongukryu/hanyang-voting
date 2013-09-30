@@ -223,6 +223,21 @@ namespace HanyangVoting.Clients.ServiceImplementations
                 });
 
 
+                var right0 = new Right
+                {
+                    Choice = choice100,
+                    Expired = false,
+                    Ticket = ticket101
+                };
+                var right1 = new Right
+                {
+                    Choice = choice3001,
+                    Expired = false,
+                    Ticket = ticket101
+                };
+                context.Rights.Add(right0);
+                context.Rights.Add(right1);
+
 
 
                 var group100 = new Group
@@ -264,13 +279,13 @@ namespace HanyangVoting.Clients.ServiceImplementations
                     Priority = 300,
                     Choices = new[] { choice3002 }
                 };
-                
+
                 context.Voters.Add(new Voter
                 {
                     Name = "한양인1",
                     Number = "1939000001",
                     Event = e,
-                    Groups = new [] { group100, group200, group301 }
+                    Groups = new[] { group100, group200, group301 }
                 });
                 context.Voters.Add(new Voter
                 {

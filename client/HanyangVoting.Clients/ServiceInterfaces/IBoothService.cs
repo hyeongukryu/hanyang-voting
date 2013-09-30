@@ -9,8 +9,13 @@ namespace HanyangVoting.Clients.ServiceInterfaces
 {
     interface IBoothService
     {
+        Booth GetBooth(string code);
+        Ticket GetTicket(string code);
+        string GetChoiceTitle(Choice choice);
+
         IEnumerable<Right> GetRights(Ticket ticket);
+        IEnumerable<Choice> GetChoices(Ticket ticket);
         IEnumerable<Option> GetOptions(Choice choice);
-        Ballot Vote(Booth booth, Right right, Option answer);
+        Ballot Vote(Booth booth, long rightId, Option answer);
     }
 }

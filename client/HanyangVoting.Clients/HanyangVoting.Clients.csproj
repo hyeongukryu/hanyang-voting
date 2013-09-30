@@ -73,12 +73,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientTypes.cs" />
-    <Compile Include="Controls\BallotControl.cs" />
     <Compile Include="HanyangVotingClientApplication.cs" />
     <Compile Include="HanyangVotingClientBootstrapper.cs" />
     <Compile Include="IContext.cs" />
     <Compile Include="Models\BoothContext.cs" />
     <Compile Include="Models\StationContext.cs" />
+    <Compile Include="NavigationCompletedEvent.cs" />
     <Compile Include="ServiceImplementations\CameraCodeReader.cs" />
     <Compile Include="ServiceImplementations\DatabaseBoothService.cs" />
     <Compile Include="ServiceImplementations\DatabaseStationService.cs" />
@@ -95,14 +95,22 @@
     <Compile Include="RegionNames.cs" />
     <Compile Include="ServiceImplementations\DefaultBinaryHashComputer.cs" />
     <Compile Include="ServiceInterfaces\IBinaryHashComputer.cs" />
+    <Compile Include="ViewModel.cs" />
     <Compile Include="ViewModels\BallotViewModel.cs" />
+    <Compile Include="ViewModels\BoothWatingViewModel.cs" />
     <Compile Include="ViewModels\CodeReaderViewModel.cs" />
+    <Compile Include="ViewModels\RegisterCompleteViewModel.cs" />
+    <Compile Include="ViewModels\SignatureViewModel.cs" />
     <Compile Include="ViewModels\SplashViewModel.cs" />
+    <Compile Include="ViewModels\VoterSearchViewModel.cs" />
     <Compile Include="Views\BackgroudControl.xaml.cs">
       <DependentUpon>BackgroudControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\BallotView.xaml.cs">
       <DependentUpon>BallotView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BoothWatingView.xaml.cs">
+      <DependentUpon>BoothWatingView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CodeReaderView.xaml.cs">
       <DependentUpon>CodeReaderView.xaml</DependentUpon>
@@ -110,11 +118,25 @@
     <Compile Include="Views\ConfirmationDialogView.xaml.cs">
       <DependentUpon>ConfirmationDialogView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\EndViewModel.cs" />
+    <Compile Include="Views\EndView.xaml.cs">
+      <DependentUpon>EndView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SignatureView.xaml.cs">
+      <DependentUpon>SignatureView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SplashView.xaml.cs">
       <DependentUpon>SplashView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\VoterSearch.xaml.cs">
-      <DependentUpon>VoterSearch.xaml</DependentUpon>
+    <Compile Include="Views\ToBallotView.xaml.cs">
+      <DependentUpon>ToBallotView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ToBallotViewModel.cs" />
+    <Compile Include="Views\VoterSearchView.xaml.cs">
+      <DependentUpon>VoterSearchView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegisterCompleteView.xaml.cs">
+      <DependentUpon>RegisterCompleteView.xaml</DependentUpon>
     </Compile>
     <Compile Include="WpfContext.cs" />
   </ItemGroup>
@@ -128,7 +150,9 @@
       <Name>HanyangVoting</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Controls\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
@@ -146,6 +170,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\BoothWatingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CodeReaderView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -154,13 +182,29 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\EndView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SignatureView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\SplashView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\VoterSearch.xaml">
+    <Page Include="Views\ToBallotView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VoterSearchView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RegisterCompleteView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>

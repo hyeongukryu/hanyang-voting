@@ -1,4 +1,5 @@
 ﻿using HanyangVoting.Clients.ViewModels;
+using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.ServiceLocation;
 using System;
 using System.Collections.Generic;
@@ -18,15 +19,20 @@ using System.Windows.Shapes;
 namespace HanyangVoting.Clients.Views
 {
     /// <summary>
-    /// CodeReaderView.xaml에 대한 상호 작용 논리
+    /// BoothWatingView.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class CodeReaderView : UserControl
+    public partial class BoothWatingView : UserControl
     {
-        public CodeReaderView()
+        public BoothWatingView()
         {
             InitializeComponent();
 
-            this.DataContext = ServiceLocator.Current.GetInstance<CodeReaderViewModel>();
+            this.DataContext = ServiceLocator.Current.GetInstance<BoothWatingViewModel>();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ServiceLocator.Current.GetInstance<IRegionManager>().RequestNavigate(RegionNames.MainRegion, "CodeReaderView");
         }
     }
 }

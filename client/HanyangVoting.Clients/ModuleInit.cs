@@ -39,13 +39,20 @@ namespace HanyangVoting.Clients
             _container.RegisterType<ICodeReader, CameraCodeReader>();
             _container.RegisterType<IBinaryHashComputer, DefaultBinaryHashComputer>();
 
-            _container.RegisterType<BackgroudControl>();
-            _regionManager.RegisterViewWithRegion(RegionNames.BackgroundRegion,
-                () => _container.Resolve<BackgroudControl>());
+            _container.RegisterType<IStationService, DatabaseStationService>();
+            _container.RegisterType<IBoothService, DatabaseBoothService>();
 
-            _container.RegisterType<SplashView>();
-            _regionManager.RegisterViewWithRegion(RegionNames.MainRegion,
-                () => _container.Resolve<SplashView>());
+            _container.RegisterType<object, CodeReaderView>("CodeReaderView");
+            _container.RegisterType<object, VoterSearchView>("VoterSearchView");
+            _container.RegisterType<object, SignatureView>("SignatureView");
+            _container.RegisterType<object, RegisterCompleteView>("RegisterCompleteView");
+            _container.RegisterType<object, BallotView>("BallotView");
+            _container.RegisterType<object, BoothWatingView>("BoothWatingView");
+            _container.RegisterType<object, ToBallotView>("ToBallotView");
+            _container.RegisterType<object, EndView>("EndView");
+
+            _regionManager.RegisterViewWithRegion(RegionNames.BackgroundRegion, () => _container.Resolve<BackgroudControl>());
+            _regionManager.RegisterViewWithRegion(RegionNames.MainRegion, () => _container.Resolve<SplashView>());
         }
 
         private void InitializePersistence()

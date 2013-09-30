@@ -48,7 +48,7 @@ namespace HanyangVoting.CodeReader
 
         public void Stop()
         {
-            _videoSource.Stop();
+            _videoSource.SignalToStop();
         }
 
         void videoSource_NewFrame(object sender, AForge.Video.NewFrameEventArgs eventArgs)
@@ -104,13 +104,20 @@ namespace HanyangVoting.CodeReader
         {
             while (true)
             {
-                string result = Process();
-                if (result != null)
+                try
                 {
-                    if (NewCode != null)
+                    string result = Process();
+                    if (result != null)
                     {
-                        NewCode(result);
+                        if (NewCode != null)
+                        {
+                            NewCode(result);
+                        }
                     }
+                }
+                catch
+                {
+                    return;
                 }
             }
         }
