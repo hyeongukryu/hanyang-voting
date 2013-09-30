@@ -29,7 +29,7 @@ namespace HanyangVoting.Clients.Views
         {
             InitializeComponent();
 
-            ServiceLocator.Current.GetInstance<EndViewModel>();
+            this.DataContext = ServiceLocator.Current.GetInstance<EndViewModel>();
 
             new Action(() =>
                 {
