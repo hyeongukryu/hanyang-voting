@@ -32,19 +32,19 @@ namespace HanyangVoting.Clients.Views
             this.DataContext = ServiceLocator.Current.GetInstance<EndViewModel>();
 
             new Action(() =>
+            {
+                Thread.Sleep(2000);
+
+                Dispatcher.Invoke(() =>
                 {
-                    Thread.Sleep(2000);
+                    var context = ServiceLocator.Current.GetInstance<BoothContext>();
+                    context.Ticket = null;
 
-                    Dispatcher.Invoke(() =>
-                        {
-                            var context = ServiceLocator.Current.GetInstance<BoothContext>();
-                            context.Ticket = null;
+                    var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
+                    regionManager.RequestNavigate(RegionNames.MainRegion, "BoothWatingView");
+                });
 
-                            var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
-                            regionManager.RequestNavigate(RegionNames.MainRegion, "BoothWatingView");
-                        });
-
-                }).BeginInvoke(null, null);
+            }).BeginInvoke(null, null);
         }
     }
 }

@@ -29,22 +29,22 @@ namespace HanyangVoting.Clients.Views
         {
             InitializeComponent();
 
-            ServiceLocator.Current.GetInstance<RegisterCompleteViewModel>();
+            this.DataContext = ServiceLocator.Current.GetInstance<RegisterCompleteViewModel>();
 
             new Action(() =>
+            {
+                Thread.Sleep(2000);
+
+                Dispatcher.Invoke(() =>
                 {
-                    Thread.Sleep(2000);
+                    var context = ServiceLocator.Current.GetInstance<StationContext>();
+                    context.Voter = null;
 
-                    Dispatcher.Invoke(() =>
-                        {
-                            var context = ServiceLocator.Current.GetInstance<StationContext>();
-                            context.Voter = null;
+                    var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
+                    regionManager.RequestNavigate(RegionNames.MainRegion, "VoterSearchView");
+                });
 
-                            var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
-                            regionManager.RequestNavigate(RegionNames.MainRegion, "VoterSearchView");
-                        });
-
-                }).BeginInvoke(null, null);
+            }).BeginInvoke(null, null);
         }
     }
 }
