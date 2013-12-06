@@ -1,0 +1,18 @@
+
+http://www-cs-students.stanford.edu/~tjw/jsbn/
+
+x - plaintext
+f - trapdoor permutation (deterministic encryption algorithm)
+h - random oracle (typically implemented using a publicly specified hash function)
+r - random string
+
+x - abt size, padding
+
+Enc(x) = (f(r), x ^ h(r)), public key signature
+Dec(x) = h(f^-1(y)) ^ z
+
+ballot(booth, choice_question, option_answer)
+ballot(booth, choice_quertion, Enc(option_answer))
+ballot(booth, choice_Quesstion, Dec(Enc(option_answer)))
+
+booth-station transitions
